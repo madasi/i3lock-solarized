@@ -40,16 +40,7 @@ green='#859900'
 # Removed
 #  --screen 1 \
 
-DPMS_TIMEOUT=5
-DPMS_OLD=$(xset q | grep Standby | sed -n 's/\s*Standby: \([0-9]*\)\s*Suspend: \([0-9]*\)\s*Off: \([0-9]*\).*/\1 \2 \3/p')
-revert () {
-    xset dpms $DPMS_OLD
-}
-trap revert HUP INT TERM EXIT
-xset dpms 0 0 $DPMS_TIMEOUT
-
 i3lock \
-  -n \
   --insidever-color=$base02$alpha \
   --insidewrong-color=$base02$alpha \
   --inside-color=$base02$alpha \
@@ -87,5 +78,3 @@ i3lock \
   --pass-media-keys \
   --pass-screen-keys \
   --pass-volume-keys \
-
-  revert
