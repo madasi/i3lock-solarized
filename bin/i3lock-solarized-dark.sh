@@ -40,7 +40,7 @@ green='#859900'
 # Removed
 #  --screen 1 \
 
-DPMS_TIMEOUT=5
+DPMS_TIMEOUT=15
 DPMS_OLD=$(xset q | grep Standby | sed -n 's/\s*Standby: \([0-9]*\)\s*Suspend: \([0-9]*\)\s*Off: \([0-9]*\).*/\1 \2 \3/p')
 revert () {
     xset dpms $DPMS_OLD
@@ -67,7 +67,7 @@ i3lock \
   --layout-color=$blue \
   --date-color=$blue \
   --time-color=$blue \
-  --blur 1 \
+  --blur=7 \
   --clock \
   --indicator \
   --time-str="%H:%M:%S" \

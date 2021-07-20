@@ -58,7 +58,7 @@ i3lock \
   --layout-color=$blue \
   --date-color=$blue \
   --time-color=$blue \
-  --blur 1 \
+  --blur=7 \
   --clock \
   --indicator \
   --time-str="%H:%M:%S" \
